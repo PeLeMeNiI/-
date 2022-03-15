@@ -1,1 +1,3 @@
-print('hello world')
+i = print('hello world')
+if i == 'hello world':
+  print('aaa')
