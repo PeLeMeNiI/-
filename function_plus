@@ -1,0 +1,6 @@
+def plus(x, y):
+    return x+y
+print('введи два числа и я сложу их!')
+x = int(input('первое:'))
+y = int(input('второе:'))
+print(f' вот сумма: {plus(x, y)}')
