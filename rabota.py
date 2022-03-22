@@ -282,7 +282,8 @@ idea = ('roof','walls')
 colors = ('red','white','blue')
 build_house(idea, colors)'''
 
-savings = int(input('кольок денег вы хотите вложить'))
+
+'''savings = int(input('кольок денег вы хотите вложить'))
 interest = int(input('под сокльок процентов')) / 100
 time = int(input('сколько времени они будут лежать в банке'))
 
@@ -299,4 +300,71 @@ def calc_savings(savings,interest,time):
     return savings
 
 d = bank(savings,interest,time)
-print(f'Ваш итоговый счет в банке: {d}')
+print(f'Ваш итоговый счет в банке: {d}')'''
+
+def game():
+    progress = True
+    word = ['orange']
+    lifes = 3
+
+    word_in_play = get_word(word)
+    template = start_template(word_in_play)
+    welcome_speech(list_to_string_convert(template))
+    while progress:
+        user_guess = user_input()
+        template = build_template(word_in_play, user_guess)
+def build_template(t, w,g=''):
+
+    for i in range(len(w)):
+        if t[i] == '_':
+            if w[i] == g:
+                t[i] = w[i]
+            else:
+                t[i] = '_'
+    return t
+            
+def user_input():
+    '''
+    output: return str, built-in input() function
+    '''
+    return input('введите строку:  ')
+def welcome_speech(t):
+    '''
+    input: t - template(string)
+    output: return none, used as just built-in function print()
+    '''
+    print(f'''
+    Добро пожаловать в игру - hangman 2022
+    Ваша задача угадать загаданное слово за несколько попыток,
+    иначе вам конец.
+    Загаданное слово состоит из {len(t)} букв {t}
+    ''')
+def start_template(w):
+    '''
+    inout: w - string(word)
+    output: replace all chars in string to '_',
+            return replaced chars as string with lengh w == t
+    '''
+    t = []
+    for l in w:
+        t.append('_')
+    return t
+def list_to_string_convert(t):
+    '''
+    input: t - template (list)
+    output: s - list converted to string
+    '''
+    s = ''
+    for g in t:
+        s += '_'
+    return s
+def get_word(w):
+    '''
+    input: w - list with strings (words)
+    output: for now: first element in list are string
+            TODO: random string from list
+    '''
+    return w[0]
+
+
+game()
