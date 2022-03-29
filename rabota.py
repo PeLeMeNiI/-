@@ -313,6 +313,7 @@ def game():
     while progress:
         user_guess = user_input()
         template = build_template(word_in_play, user_guess)
+        guessed = list_to_string_convert(template)
 def build_template(t, w,g=''):
 
     for i in range(len(w)):
