@@ -35,5 +35,3 @@ print(player_stats.values())
 
 for key in player_stats.keys():
     print(key)
-
-
