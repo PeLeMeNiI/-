@@ -11,5 +11,3 @@ for w in lirics:
             lirics_word = ''
         elif w not in banned:
             lirics_word
-
-        
