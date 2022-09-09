@@ -1,0 +1,17 @@
+name = input('введи свое имя')
+slovar = {}
+best = 0
+znach = []
+for i in name:
+    if i in slovar:
+        slovar[i] += 1
+    else:
+        slovar[i] = 1
+        znach.append(slovar.get[i])
+
+for d in znach:
+    if d > best:
+        d = best
+
+        
+print (f'{d}')
