@@ -1,0 +1,5 @@
+from random import randint
+class game:
+    def __init__(self,name,kachestvo):
+        self.name = name
+        self.kachestvo = kachestvo
