@@ -1,0 +1,34 @@
+from tkinter import *
+from time import *
+
+root = Tk()
+
+# my_label = Label(root,text='Hello world')
+# my_label.pack()
+
+# btn = Button(root, text='dont click', padx='100',pady='50',bg = 'purple', fg='orange',bd='30')
+# state=DISABLED заблокировать кнопку
+
+# def click_handler():
+#     b = ['ты идиот','это факт', 'все поняли', 'хватит']
+#     for i in b:
+#         my_label = Label(root, text = i)
+#         my_label.pack()
+#         sleep(2)
+# entry_fiend = Entry(root) текстовое поле
+# entry_field.pack()
+
+# entry_text = entry_fiend.get() вписать в переменную значение ввода человека
+
+    
+
+# btn = Button(root, text='кликни и узнай кто ты',command=click_handler)
+
+
+# btn.pack()
+
+root.title('very simple calculator 2022')
+entry_field = Entry(root, width=40, borderwidth=5, hi=40)
+entry_field.grid(row=0, column=0,columnspan=3,rowspan=5,padx=10,pady=10)
+
+root.mainloop()
