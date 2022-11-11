@@ -1,0 +1,55 @@
+from tkinter import *
+from time import sleep
+
+root=Tk()
+
+canvas = Canvas(root,width =  600, height = 600)
+canvas.pack()
+# a1 = canvas.create_rectangle(10,10,20,20, fill="red" )
+# a = canvas.create_rectangle(10,10,20,20, fill="red" )
+# speed_x = 3
+# speed_y = 4
+
+# for i in range(100):
+#     root.update()
+#     canvas.move(a, 3, 4)
+#     sleep(0.01)
+    
+
+
+
+class Circle:
+    def move(self):
+     self.x += self.speed_x
+     self.y += self.speed_y
+     canvas.move(self.object, self.speed_x, self.speed_y)
+     self.check_collision()
+
+    def __init__(self):
+        self.x = 10
+        self.y = 10
+        self.size = 50
+        self.speed_x = 3
+        self.speed_y = 2
+        self.canvas_size = 600
+        self.object = canvas.create_oval(self.x,self.y,self.size,self.size,fill = 'red')
+
+    def check_collision(self):
+        pos = canvas.coords(self.object)
+        if pos[0] <= 0:
+            self.speed_x *= -1
+        if pos[1] <= 0:
+            self.speed_y *= -1
+        if pos[2] >= self.canvas_size:
+            self.speed_x *= -1
+        if pos[3] >= self.canvas_size:
+            self.speed_y *= -1
+c1 = Circle()
+while True:
+    c1.move()
+    root.update()
+    sleep(0.05)
+ # переместить в начало
+# a.pack()
+root.mainloop()
+
