@@ -1,0 +1,48 @@
+from tkinter import *
+#TODO поменять * из импорта на модуль 
+
+#переменные
+canvas_size = 600
+figure_size = 200
+ratio = canvas_size // figure_size
+bg_color  ='black'
+empty = None
+
+# игроки
+x = 'player 1'
+o = 'palyer 2'
+first_player = x
+
+class Board(Tk):
+    def __init__(self,start_player):
+        super().__init__()
+        self.canvas = Canvas(height=canvas_size,width= canvas_size,bg = bg_color)
+        self.canvas.pack()
+        self.figure_size = figure_size
+        self.current_player = start_player
+        #self.canvas.bind('<Button-1>', self.click_event)
+        self.boRD = [
+            [empty,empty,empty],
+            [empty,empty,empty],
+            [empty,empty,empty]]
+        
+    def build_grid(self,grid_color):
+        x = canvas_size // ratio
+        y2 = canvas_size
+        y1 = 0 
+        for _ in range(2):
+            self.canvas.create_line(x, y1, x, y2, fill=grid_color )
+            self.canvas.create_line(y1, x, y2, x, fill=grid_color )
+            x += canvas_size // ratio
+    def render_cross(self,posX,posY):
+        pass
+    def render_circle(self, posX,posY):
+        pass
+    def winner(self,player=None):
+        pass
+
+game_v1 = Board(start_player= first_player)
+game_v1.build_grid('white')
+
+
+game_v1.mainloop()
