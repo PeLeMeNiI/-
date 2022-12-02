@@ -1,0 +1,28 @@
+# def opr(spisok, a):
+#     for i in spisok:
+#         if i == a:
+#             return True
+#     return False
+
+def opr2(spisok,a):
+    n = len(spisok)
+    for i in range(n):
+        n = len(spisok)
+        s = n//2
+        if spisok[s] > a:
+            spisok = spisok[:s]
+        elif spisok[s] < a:
+            spisok = spisok[s:]
+        else: 
+            return True
+
+def sort(spisok):
+    n = len(spisok)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if spisok[j] > spisok[j+1]:
+                spisok[j],spisok[j+1] = spisok[j+1],spisok[i]
+
+
+print(opr2([2,5,7,11,45,67,89], 7))
+print(sort([2,4,3,7,5,15,13]))
